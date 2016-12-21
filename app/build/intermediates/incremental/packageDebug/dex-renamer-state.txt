@@ -1,0 +1,7 @@
+#Wed Dec 21 18:37:47 BRST 2016
+base.0=/home/giovane/AndroidStudioProjects/Chat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3a17708e64b36b56edb765a4a6e32f67806dd9d0
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/giovane/AndroidStudioProjects/Chat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_281a0a867a2506b9a016f45afa9a677a9bfffe2c/classes.dex
+base.1=/home/giovane/AndroidStudioProjects/Chat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_281a0a867a2506b9a016f45afa9a677a9bfffe2c
+file.0=/home/giovane/AndroidStudioProjects/Chat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3a17708e64b36b56edb765a4a6e32f67806dd9d0/classes.dex

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "513931483466",
+    "firebase_url": "https://chat-3f74e.firebaseio.com",
+    "project_id": "chat-3f74e",
+    "storage_bucket": "chat-3f74e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513931483466:android:6dec2cc3740dd34f",
+        "android_client_info": {
+          "package_name": "thiago.giovane.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513931483466-l3q9c4qrhc4mfe3v1et6pvmlqfd8g3pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Z--qb6mKoRsrve7CDS8poUA5bJm1Y90"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
