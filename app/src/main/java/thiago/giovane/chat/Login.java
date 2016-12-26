@@ -33,7 +33,6 @@ public class Login extends AppCompatActivity {
     Button loginButton;
     String user, pass;
     CheckBox ch_password;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +64,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login.this, Register.class));
+                finish();
             }
         });//fecha OnClickListener
 
@@ -79,10 +79,10 @@ public class Login extends AppCompatActivity {
                 }else if(pass.equals("")){
                     password.setError("Não pode ficar em branco");
                 }else{
-                    String url = "https://chat-3f74e.firebaseio.com/users.json";
-                    final ProgressDialog pd = new ProgressDialog(Login.this);
-                    pd.setMessage("Loading...");
-                    pd.show();
+                        String url = "https://chat-3f74e.firebaseio.com/users.json";
+                        final ProgressDialog pd = new ProgressDialog(Login.this);
+                        pd.setMessage("Loading...");
+                        pd.show();
 
                     StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                         @Override
@@ -98,8 +98,11 @@ public class Login extends AppCompatActivity {
                                     } else if (obj.getJSONObject(user).getString("password").equals(pass)) {
                                         UserDetails.username = user;
                                         UserDetails.password = pass;
-                                        startActivity(new Intent(Login.this, Users.class));
+                                        startActivity(new Intent(Login.this, Profile.class));
                                         finish();
+                                        String userFormat;
+                                        userFormat = user.substring(0,1).toUpperCase().concat(user.substring(1));
+                                        Toast.makeText(Login.this, "Seja bem-vindo, "+userFormat+"!", Toast.LENGTH_LONG).show();
                                     } else {
                                         Toast.makeText(Login.this, "incorrect password", Toast.LENGTH_LONG).show();
                                     }
@@ -123,4 +126,5 @@ public class Login extends AppCompatActivity {
             }//fecha onClick
         });//fecha OnClickListener
     }//fecha onCreate
+
 }//fecha Class

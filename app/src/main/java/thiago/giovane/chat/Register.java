@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,6 +24,9 @@ import com.firebase.client.Firebase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Register extends AppCompatActivity {
     //Widgets
@@ -50,9 +54,13 @@ public class Register extends AppCompatActivity {
                 if (!selected){
                     password.setTransformationMethod(new PasswordTransformationMethod());
                     passwordConfirm.setTransformationMethod(new PasswordTransformationMethod());
+                    password.setSelection(password.getText().length());
+                    passwordConfirm.setSelection(passwordConfirm.getText().length());
                 }else{
                     password.setTransformationMethod(null);
                     passwordConfirm.setTransformationMethod(null);
+                    password.setSelection(password.getText().length());
+                    passwordConfirm.setSelection(passwordConfirm.getText().length());
                 }
             }
         });
@@ -63,6 +71,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Register.this, Login.class));
+                finish();
             }//fecha onClick
         });//fecha OnClickListener
 
@@ -106,7 +115,9 @@ public class Register extends AppCompatActivity {
 
                                     if (!obj.has(user)) {
                                         reference.child(user).child("password").setValue(pass);
-                                        Toast.makeText(Register.this, "registrado com sucesso", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Register.this, "Registrado com sucesso", Toast.LENGTH_LONG).show();
+                                        Intent it = new Intent(Register.this, Login.class);
+                                        startActivity(it);
                                     }else{
                                         Toast.makeText(Register.this, "Username já existente", Toast.LENGTH_LONG).show();
                                     }//fecha else
